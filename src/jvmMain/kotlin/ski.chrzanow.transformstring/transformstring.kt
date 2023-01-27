@@ -21,4 +21,4 @@ fun String.TRANSFORM_STRING() = prepare("_").uppercase()
 
 fun String.`transform-string`() = prepare("-").lowercase()
 
-fun String.`TRANSFORM-STRING`() = prepare("-").lowercase()
+fun String.`TRANSFORM-STRING`() = prepare("-").uppercase()

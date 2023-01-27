@@ -15,7 +15,7 @@ class Tests {
     }
 
     @Test
-    fun uppeCcase() {
+    fun upperCase() {
         assertEquals("FOOBAR", "foo bar".TRANSFORMSTRING())
         assertEquals("FOOBAR", "foo-bar".TRANSFORMSTRING())
         assertEquals("FOOBAR", "foo_bar".TRANSFORMSTRING())
