@@ -7,18 +7,18 @@ private fun String.prepare(separator: String) =
         .replace("[\\W_]".toRegex(), separator)
         .removePrefix(separator)
 
-fun String.transformstring() = prepare("").lowercase()
+fun String.transformstring() = prepare("").toLowerCase()
 
-fun String.TRANSFORMSTRING() = prepare("").uppercase()
+fun String.TRANSFORMSTRING() = prepare("").toUpperCase()
 
 fun String.transformString() = CaseUtils.toCamelCase(prepare(" "), false, ' ')
 
 fun String.TransformString() = CaseUtils.toCamelCase(prepare(" "), true, ' ')
 
-fun String.transform_string() = prepare("_").lowercase()
+fun String.transform_string() = prepare("_").toLowerCase()
 
-fun String.TRANSFORM_STRING() = prepare("_").uppercase()
+fun String.TRANSFORM_STRING() = prepare("_").toUpperCase()
 
-fun String.`transform-string`() = prepare("-").lowercase()
+fun String.`transform-string`() = prepare("-").toLowerCase()
 
-fun String.`TRANSFORM-STRING`() = prepare("-").uppercase()
+fun String.`TRANSFORM-STRING`() = prepare("-").toUpperCase()
