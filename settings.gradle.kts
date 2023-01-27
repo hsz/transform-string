@@ -1,3 +1,1 @@
-
-rootProject.name = "TransformString"
-
+rootProject.name = "transform-string"
