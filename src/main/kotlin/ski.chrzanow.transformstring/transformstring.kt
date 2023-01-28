@@ -18,28 +18,28 @@ internal fun String.prepare(separator: String) =
         .removeSuffix(separator)
 
 
-fun String.transformstring() = prepare("").toLowerCase()
+fun String.transformstring() = prepare("").lowercase()
 
-fun String.TRANSFORMSTRING() = prepare("").toUpperCase()
+fun String.TRANSFORMSTRING() = prepare("").uppercase()
 
 fun String.transformString() = CaseUtils.toCamelCase(prepare(" "), false, ' ')
 
 fun String.TransformString() = CaseUtils.toCamelCase(prepare(" "), true, ' ')
 
-fun String.transform_string() = prepare("_").toLowerCase()
+fun String.transform_string() = prepare("_").lowercase()
 
-fun String.TRANSFORM_STRING() = prepare("_").toUpperCase()
+fun String.TRANSFORM_STRING() = prepare("_").uppercase()
 
-fun String.`transform-string`() = prepare("-").toLowerCase()
+fun String.`transform-string`() = prepare("-").lowercase()
 
-fun String.`TRANSFORM-STRING`() = prepare("-").toUpperCase()
+fun String.`TRANSFORM-STRING`() = prepare("-").uppercase()
 
 fun String.tRaNsFoRmStRiNg(): String {
     var newStr = ""
     var shouldBeUpperCase = false
     forEach { str ->
         if(str.isLetter()) {
-            newStr += if(shouldBeUpperCase) str.toUpperCase() else str.toLowerCase()
+            newStr += if(shouldBeUpperCase) str.uppercase() else str.lowercase()
             shouldBeUpperCase = !shouldBeUpperCase
         } else newStr += str
     }
