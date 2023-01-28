@@ -6,6 +6,30 @@ import kotlin.test.assertEquals
 class Tests {
 
     @Test
+    fun prepare() {
+        assertEquals("hello world", "hello_world".prepare(" "))
+        assertEquals("hello World", "helloWorld".prepare(" "))
+        assertEquals("HELLO WORLD", "HELLO_WORLD".prepare(" "))
+        assertEquals("hello world", "hello-world".prepare(" "))
+        assertEquals("Hello world", "Hello@world".prepare(" "))
+
+        assertEquals("Hello123world", "Hello123world".prepare(" "))
+
+        assertEquals("leading separator1", "_leading_separator1".prepare(" "))
+        assertEquals("leading_separator2", "_leading_separator2".prepare("_"))
+        assertEquals("leading separator3", "  __leading_separator3".prepare(" "))
+        assertEquals("leading_separator4", "_leading_separator4".prepare("_"))
+        assertEquals("leading@separator5", "  __leading_separator5".prepare("@"))
+
+        assertEquals("trailing@separator7", "  trailing_separator7_".prepare("@"))
+        assertEquals("trailing@separator6", "  trailing_separator6@".prepare("@"))
+        assertEquals("trailing@separator8", "  trailing_separator8@@__@".prepare("@"))
+
+        assertEquals("leadingtrailing@separator8", "__@leadingtrailing_separator8@@__@".prepare("@"))
+        assertEquals("leadingtrailing_separator8", "__@leadingtrailing_separator8@@__@".prepare("_"))
+        assertEquals("leadingtrailing separator8", "__@leadingtrailing_separator8@@__@".prepare(" "))
+    }
+    @Test
     fun lowerCase() {
         assertEquals("foobar", "foo bar".transformstring())
         assertEquals("foobar", "foo-bar".transformstring())
