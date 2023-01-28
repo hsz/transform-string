@@ -22,3 +22,15 @@ fun String.TRANSFORM_STRING() = prepare("_").toUpperCase()
 fun String.`transform-string`() = prepare("-").toLowerCase()
 
 fun String.`TRANSFORM-STRING`() = prepare("-").toUpperCase()
+
+fun String.tRaNsFoRmStRiNg(): String {
+    var newStr = ""
+    var shouldBeUpperCase = false
+    forEach { str ->
+        if(str.isLetter()) {
+            newStr += if(shouldBeUpperCase) str.toUpperCase() else str.toLowerCase()
+            shouldBeUpperCase = !shouldBeUpperCase
+        } else newStr += str
+    }
+    return newStr
+}
