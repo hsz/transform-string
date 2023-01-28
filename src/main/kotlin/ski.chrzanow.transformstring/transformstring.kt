@@ -13,8 +13,10 @@ import org.apache.commons.text.CaseUtils
  **/
 internal fun String.prepare(separator: String) =
     replace("((?<=\\p{Ll})\\p{Lu}|\\p{Lu}(?=\\p{Ll}))".toRegex(), "$separator$1")
-        .replace("[\\W_]".toRegex(), separator)
+        .replace("[\\W_]+".toRegex(), separator)
         .removePrefix(separator)
+        .removeSuffix(separator)
+
 
 fun String.transformstring() = prepare("").toLowerCase()
 
