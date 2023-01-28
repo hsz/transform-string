@@ -1,7 +1,6 @@
 fun properties(key: String) = project.findProperty(key)?.toString()
 
 plugins {
-    `kotlin-dsl`
     `maven-publish`
     signing
     kotlin("jvm") version "1.8.0"
