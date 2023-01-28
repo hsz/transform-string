@@ -2,7 +2,16 @@ package ski.chrzanow.transformstring
 
 import org.apache.commons.text.CaseUtils
 
-private fun String.prepare(separator: String) =
+/**
+ * Replaces matched patterns of uppercase letters that are preceded or followed by lowercase letters with the separator
+ * followed by the matched letter. It also replaces any non-word or underscore characters with the separator. Finally,
+ * it removes any separators that may have been added to the beginning of the string.
+ *
+ *  @param separator the separator to be inserted between apparent word boundaries.
+ *  @return a string retaining its original case with each apparent word separated by the provided separator.
+ *
+ **/
+internal fun String.prepare(separator: String) =
     replace("((?<=\\p{Ll})\\p{Lu}|\\p{Lu}(?=\\p{Ll}))".toRegex(), "$separator$1")
         .replace("[\\W_]".toRegex(), separator)
         .removePrefix(separator)
