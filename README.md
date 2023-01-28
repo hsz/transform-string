@@ -17,6 +17,7 @@ dependencies {
 "hello world".TRANSFORMSTRING()     // HELLOWORLD
 "hello world".TransformString()     // HelloWorld
 "hello world".`TRANSFORM-STRING`()  // HELLO-WORLD
+"hello world".tRaNsFoRmStRiNg()  // hElLo WoRlD
 ```
 
 If you find that concept interesting and have more ideas for it — do not hesitate to create a Pull Request!
