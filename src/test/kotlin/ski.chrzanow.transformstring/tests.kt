@@ -76,4 +76,15 @@ class Tests {
         assertEquals("FOO-BAR", "FOO_BAR".`TRANSFORM-STRING`())
         assertEquals("FOO-BAR", "FooBar".`TRANSFORM-STRING`())
     }
+
+    @Test
+    fun alternativeCase() {
+        assertEquals("fOo BaR", "foo bar".tRaNsFoRmStRiNg())
+        assertEquals("fOo-BaR", "foo-bar".tRaNsFoRmStRiNg())
+        assertEquals("fOo_BaR", "foo_bar".tRaNsFoRmStRiNg())
+        assertEquals("fOo_BaR", "FOO_BAR".tRaNsFoRmStRiNg())
+        assertEquals("fOoBaR", "FooBar".tRaNsFoRmStRiNg())
+        assertEquals("1fOo-BaR", "1foo-bar".tRaNsFoRmStRiNg())
+        assertEquals("fOo $ BaR", "foo $ bar".tRaNsFoRmStRiNg())
+    }
 }
